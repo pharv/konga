@@ -11,8 +11,8 @@ data:
   {{- if .Values.config }}
   PORT: "{{ default 1337 .Values.config.port }}"
   NODE_ENV: {{ default "development" .Values.config.node_env }}
-  SSL_KEY_PATH: {{ .Values.config.ssl_key_path }}
-  SSL_CRT_PATH: {{ .Values.config.ssl_crt_path }}
+  SSL_KEY_PATH: "{{ .Values.config.ssl_key_path }}"
+  SSL_CRT_PATH: "{{ .Values.config.ssl_crt_path }}"
   KONGA_HOOK_TIMEOUT: "{{ default 60000 .Values.config.konga_hook_timeout }}"
   DB_ADAPTER: {{ default "postgres" .Values.config.db_adapter }}
   DB_URI: {{ .Values.config.db_uri }}
